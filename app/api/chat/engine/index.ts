@@ -1,4 +1,3 @@
-/* eslint-disable turbo/no-undeclared-env-vars */
 import { VectorStoreIndex } from "llamaindex";
 import { PGVectorStore } from "llamaindex/storage/vectorStore/PGVectorStore";
 import {

@@ -4,9 +4,9 @@
   "scripts": {
     "format": "prettier --ignore-unknown --cache --check .",
     "format:write": "prettier --ignore-unknown --write .",
-    "dev": "next dev",
+    "dev": "next dev -p 8651",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8651",
     "lint": "next lint",
     "generate": "tsx app/api/chat/engine/generate.ts"
   },
