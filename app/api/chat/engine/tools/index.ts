@@ -20,9 +20,9 @@ const toolFactory: Record<string, ToolCreator> = {
   weather: (config: unknown) => {
     return new WeatherTool(config as WeatherToolParams);
   },
-  interpreter: (config: unknown) => {
-    return new InterpreterTool(config as InterpreterToolParams);
-  },
+  // interpreter: (config: unknown) => {
+  //   return new InterpreterTool(config as InterpreterToolParams);
+  // },
 };
 
 function createLocalTools(

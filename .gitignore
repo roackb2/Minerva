@@ -39,3 +39,6 @@ tool-output/
 
 # data
 data/*
+
+# local
+local/*

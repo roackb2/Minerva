@@ -1,5 +1,5 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
-import * as dotenv from "dotenv";
+import 'dotenv/config'
 import { VectorStoreIndex, storageContextFromDefaults } from "llamaindex";
 import { PGVectorStore } from "llamaindex/storage/vectorStore/PGVectorStore";
 import { getDocuments } from "./loader";
@@ -11,11 +11,11 @@ import {
   checkRequiredEnvVars,
 } from "./shared";
 
-dotenv.config();
-
 async function loadAndIndex() {
   // load objects from storage and convert them into LlamaIndex Document objects
+  console.log('getting documents')
   const documents = await getDocuments();
+  console.log(documents)
 
   // create postgres vector store
   const vectorStore = new PGVectorStore({

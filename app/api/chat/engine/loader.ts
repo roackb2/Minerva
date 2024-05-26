@@ -1,6 +1,6 @@
-import { SimpleDirectoryReader } from "llamaindex";
+import { SimpleDirectoryReader } from "llamaindex/readers/SimpleDirectoryReader";
 
-export const DATA_DIR = "./data";
+export const DATA_DIR = process.env.DATA_DIR || "./data";
 
 export async function getDocuments() {
   return await new SimpleDirectoryReader().loadData({
