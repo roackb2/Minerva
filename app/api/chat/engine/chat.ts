@@ -2,7 +2,7 @@ import { BaseToolWithCall, OpenAIAgent, QueryEngineTool } from "llamaindex";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { getDataSource } from "./index";
-import { DATA_DIR } from "./loader";
+import { DATA_DIRS } from "./loader";
 import { createTools } from "./tools";
 
 export async function createChatEngine() {
@@ -17,7 +17,7 @@ export async function createChatEngine() {
         queryEngine: index.asQueryEngine(),
         metadata: {
           name: "data_query_engine",
-          description: `A query engine for documents in storage folder: ${DATA_DIR}`,
+          description: `A query engine for documents in storage folder: ${DATA_DIRS}`,
         },
       }),
     );

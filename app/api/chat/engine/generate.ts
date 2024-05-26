@@ -15,7 +15,6 @@ async function loadAndIndex() {
   // load objects from storage and convert them into LlamaIndex Document objects
   console.log('getting documents')
   const documents = await getDocuments();
-  console.log(documents)
 
   // create postgres vector store
   const vectorStore = new PGVectorStore({

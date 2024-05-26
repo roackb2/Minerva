@@ -1,9 +1,13 @@
 import { SimpleDirectoryReader } from "llamaindex/readers/SimpleDirectoryReader";
 
-export const DATA_DIR = process.env.DATA_DIR || "./data";
+export const DATA_DIRS = process.env.DATA_DIRS
 
 export async function getDocuments() {
-  return await new SimpleDirectoryReader().loadData({
-    directoryPath: DATA_DIR,
-  });
+  const directories = JSON.parse(DATA_DIRS as string) as string[] || ['./data']
+  console.log('Loading files from directories', directories)
+  return (await Promise.all(directories.map(dir => {
+    return new SimpleDirectoryReader().loadData({
+      directoryPath: dir,
+    });
+  }))).flat()
 }
