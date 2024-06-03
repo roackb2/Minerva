@@ -1,6 +1,6 @@
 # Minerva
 
-My personal knowledge base built with LLM and RAG.
+My personal knowledge base assistant built with LLM and RAG.
 
 ## Original documentation
 
